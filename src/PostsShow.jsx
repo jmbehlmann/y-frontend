@@ -1,3 +1,5 @@
+import axios from "axios"
+
 export function PostsShow(props) {
 
   const handleSubmit = (event) => {
@@ -17,10 +19,10 @@ export function PostsShow(props) {
       <p>Image: {props.post.image}</p>
       <form onSubmit={handleSubmit}>
         <div>
-          Text: <input defaultValue={props.post.text} name="text" type="text" />
+          Text: <input type="text" name="text" defaultValue={props.post.text} />
         </div>
         <div>
-          Image: <input defaultValue={props.post.image} name="image" type="text" />
+          Image: <input type="text" name="image" defaultValue={props.post.image} />
         </div>
         <button type="submit">Update Post</button>
       </form>
