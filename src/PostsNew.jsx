@@ -1,18 +1,16 @@
 import axios from 'axios'
 
 export function PostsNew(props) {
-  const createPost = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault()
     const params = new FormData(event.target)
-    props.onPostCreate(params)
-    event.target.reset()
-    console.log('creating post')
-    }
-    
+    props.onCreatePost(params, () => event.target.reset());
+    };
+
   return (
     <div id="posts-new">
       <h1>New posts</h1>
-      <form onSubmit={createPost}>
+      <form onSubmit={handleSubmit}>
         <p>Text: <input name="text" type="text" /></p>
         <p>Image: <input name="image" type="text" /></p>
         <button type="submit">Make new post</button>
