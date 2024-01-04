@@ -1,8 +1,8 @@
 import axios from "axios";
 import {useState, useEffect} from 'react';
-import {PostsIndex} from "./PostsIndex";
-import {PostsNew} from "./PostsNew";
-import {PostsShow} from "./PostsShow";
+import { PostsIndex } from "./PostsIndex";
+import { PostsNew } from "./PostsNew";
+import { PostsShow } from "./PostsShow";
 import { Modal } from "./Modal";
 
 export function Content() {
@@ -55,7 +55,7 @@ export function Content() {
 
   const handleDestroyPost = (post) => {
     console.log("handleDestroyPost", post);
-    axios.delete(`http://localhost:3000/posts/${post.id}o.json`).then((response) => {
+    axios.delete(`http://localhost:3000/posts/${post.id}.json`).then((response) => {
       setPosts(posts.filter((p) => p.id !== post.id));
       handleClose();
     });
