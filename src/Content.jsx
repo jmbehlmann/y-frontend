@@ -7,6 +7,8 @@ import { Modal } from "./Modal";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
+import { About } from "./About";
+import { Routes, Route  } from "react-router-dom";
 
 export function Content() {
   const [posts, setPosts] = useState([]);
@@ -69,11 +71,18 @@ export function Content() {
 
   return (
     <div>
-      <Signup />
-      <Login />
+      <Routes>
+        <Route path="/about" element ={<About />} />
+        <Route path="/login" element ={<Login />} />
+        <Route path="/signup" element ={<Signup />} />
+        <Route path="/postnew" element ={<PostsNew />} />
+        <Route path="/" element ={<PostsIndex posts={posts} onShowPost={handleShowPost} />} />
+      </Routes>
+      {/* <Signup /> */}
+      {/* <Login /> */}
       <LogoutLink />
-      <PostsNew onCreatePost={handlePostCreate} />
-      <PostsIndex posts={posts} onShowPost={handleShowPost} />
+      {/* <PostsNew onCreatePost={handlePostCreate} /> */}
+      {/* <PostsIndex posts={posts} onShowPost={handleShowPost} /> */}
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} onDestroyPost={handleDestroyPost} />
       </Modal>
