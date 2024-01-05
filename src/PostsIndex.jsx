@@ -3,16 +3,25 @@ export function PostsIndex(props) {
   return (
     <div id="posts-index">
       <h1>All Posts</h1>
-      <div className="row">
+      <div className="col">
         {props.posts.map((post) => (
-          <div key={post.id}>
-            <h2>Text: {post.text}</h2>
-            <p>Image: {post.image}</p>
-            <p>Id: {post.id}</p>
-            <button onClick={() => props.onShowPost(post)}>More Info</button>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+           <div class="col-sm-4 mx-auto">
+           <div class="card">
+             <div class="card-body">
+               <h5 class="card-title">{post.id}</h5>
+               <p class="card-text">{post.text}.</p>
+               <img src={post.image} class="card-img-top" alt="..."></img>
+
+               <button class="btn btn-primary" onClick={() => props.onShowPost(post)}>More info</button>
+             </div>
+           </div>
+           <br />
+         </div>
+
+       ))}
+
+     </div>      
+
+   </div>
+ );
 }

@@ -80,7 +80,7 @@ export function Content() {
       </Routes>
       {/* <Signup /> */}
       {/* <Login /> */}
-      <LogoutLink />
+      {/* <LogoutLink /> */}
       {/* <PostsNew onCreatePost={handlePostCreate} /> */}
       {/* <PostsIndex posts={posts} onShowPost={handleShowPost} /> */}
       <Modal show={isPostsShowVisible} onClose={handleClose}>

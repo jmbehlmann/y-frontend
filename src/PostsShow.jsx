@@ -16,7 +16,7 @@ export function PostsShow(props) {
     <div>
       <h1>Post</h1>
       <p>Text: {props.post.text}</p>
-      <p>Image: {props.post.image}</p>
+      <p><img src={props.post.image} class="rounded mx-auto d-block"/></p>
       <form onSubmit={handleSubmit}>
         <div>
           Text: <input type="text" name="text" defaultValue={props.post.text} />
