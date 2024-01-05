@@ -7,8 +7,8 @@ export function PostsIndex(props) {
         {props.posts.map((post) => (
           <div key={post.id}>
             <h2>Text: {post.text}</h2>
-            <p>Image: {post.image}</p>
-            <p>Id: {post.id}</p>
+            <p><img src={post.image} /></p>
+            {/* <p>Id: {post.id}</p> */}
             <button onClick={() => props.onShowPost(post)}>More Info</button>
           </div>
         ))}
